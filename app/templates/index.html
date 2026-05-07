@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Automated System Health Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <h1>Automated System Health Checker</h1>
+          <p class="subtitle">Live CPU, RAM, and Disk monitoring (auto-refresh)</p>
+        </div>
+        <div class="pill" id="statusPill">Loading…</div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="cardTitle">CPU Usage</div>
+          <div class="big" id="cpu">--</div>
+          <div class="meter"><div class="bar" id="cpuBar"></div></div>
+          <div class="hint">Threshold: 80%</div>
+        </div>
+        <div class="card">
+          <div class="cardTitle">RAM Usage</div>
+          <div class="big" id="mem">--</div>
+          <div class="meter"><div class="bar" id="memBar"></div></div>
+          <div class="hint">Threshold: 80%</div>
+        </div>
+        <div class="card">
+          <div class="cardTitle">Disk Usage</div>
+          <div class="big" id="disk">--</div>
+          <div class="meter"><div class="bar" id="diskBar"></div></div>
+          <div class="hint">Threshold: 80%</div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top: 18px;">
+        <div class="cardTitle">Latest Alerts</div>
+        <ul class="alerts" id="alerts">
+          <li class="muted">No data yet.</li>
+        </ul>
+        <div class="footerRow">
+          <div class="muted" id="meta">—</div>
+          <button class="btn" id="refreshBtn">Refresh now</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
