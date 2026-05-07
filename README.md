@@ -172,9 +172,3 @@ Stages:
 { "cpu_percent": 23.4 }
 ```
 
-## Screenshots
-
-Add screenshots here after running locally:
-- Dashboard UI
-- Grafana dashboard
-
